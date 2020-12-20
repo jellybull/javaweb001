@@ -33,6 +33,7 @@ public class ServletUser extends HttpServlet {
 		if (mymethod.equals("login")) {
 			String username=request.getParameter("username");
 			String userpassword=request.getParameter("pwd");
+			System.out.println("helloworld");
 			boolean  flag=userdao.loginCheck(username, userpassword);
 			if(flag) {
 				HttpSession session=request.getSession();

@@ -52,7 +52,7 @@
 
 											<div class="login_icon"><img src="images/login.png" /></div>
 
-											<form class="">
+											<form runat="server" action="${pageContext.request.contextPath }/ServletUser?mymethod=login" method="post">
 												<fieldset>
 										<ul>
    <li class="frame_style form_error"><label class="user_icon"></label><input name="用户名" type="text"  id="username"/><i>用户名</i></li>
