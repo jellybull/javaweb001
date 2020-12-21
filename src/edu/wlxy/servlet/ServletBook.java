@@ -40,7 +40,7 @@ public class ServletBook extends HttpServlet {
 					ArrayList<Book> booklist=bookdao.findAllBook();
 					if(booklist!=null) {
 						request.setAttribute("blist", booklist);
-						request.getRequestDispatcher("/manager/booklist.jsp").forward(request, response);
+						request.getRequestDispatcher("/administrator/Book_List.jsp").forward(request, response);
 					}else {
 						out.print("图书不存在");
 					}
