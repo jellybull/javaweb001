@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import edu.wlxy.dao.impl.UserDAOImpl;
 import edu.wlxy.entity.User;
-
+@WebServlet("/ServletUser")
 public class ServletUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -30,19 +31,20 @@ public class ServletUser extends HttpServlet {
 		String mymethod = request.getParameter("mymethod");
 		UserDAOImpl  userdao=new UserDAOImpl();
 		PrintWriter out =response.getWriter();
+		out.println("he");
 		if (mymethod.equals("login")) {
 			String username=request.getParameter("username");
 			String userpassword=request.getParameter("pwd");
-			System.out.println("helloworld");
 			boolean  flag=userdao.loginCheck(username, userpassword);
 			if(flag) {
 				HttpSession session=request.getSession();
 				session.setAttribute("uname", username);
-				response.sendRedirect(request.getContextPath()+"/manager/index.html");
-				
+				response.sendRedirect(request.getContextPath()+"/administrator/index.html");
+				System.out.println("success");
 				//request.getRequestDispatcher("/index.html").forward(request, response);
 			}else {
 				out.print("你输入的用户名或密码有误");
+				System.out.println("error");
 			}
 		}
 		else if (mymethod.equals("addUser")) {

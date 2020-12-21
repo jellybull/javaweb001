@@ -19,7 +19,7 @@
 		<property name="jdbcUrl">
            	jdbc:mysql://localhost:3306/dbbook?useSSL=false&amp;serverTimezone=Asia/Shanghai</property>
 		<property name="user">root</property>
-		<property name="password">123456</property>
+		<property name="password">root</property>
 		<property name="initialPoolSize">5</property>
 		<property name="maxPoolSize">15</property>
 	</named-config>

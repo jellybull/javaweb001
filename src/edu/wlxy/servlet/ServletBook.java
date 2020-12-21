@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import edu.wlxy.entity.User;
 /**
  * Servlet implementation class ServletBook
  */
+@WebServlet("/ServletBook")
 public class ServletBook extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

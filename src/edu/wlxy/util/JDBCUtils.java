@@ -26,7 +26,7 @@ public class JDBCUtils {
 		bds.setDriverClassName("com.mysql.jdbc.Driver");
 		bds.setUrl("jdbc:mysql://127.0.0.1:3306/dbbook");
 		bds.setUsername("root");
-		bds.setPassword("123456");
+		bds.setPassword("root");
 		bds.setInitialSize(10);
 		bds.setMaxActive(15);
 		ds=bds;
